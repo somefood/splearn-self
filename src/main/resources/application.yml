@@ -4,3 +4,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  docker:
+    compose:
+      lifecycle-management: start_only # 컨테이너가 안 띄어져있으면 같이 띄우지만, 종료시에는 내비둠
