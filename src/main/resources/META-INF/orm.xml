@@ -51,22 +51,24 @@
             </unique-constraint>
         </table>
         <attributes>
-            <embedded name="profile">
-                <attribute-override name="address">
-                    <column name="profile_address" length="20"/>
-                </attribute-override>
-            </embedded>
-
             <basic name="introduction">
                 <column column-definition="TEXT"/>
             </basic>
 
             <basic name="registeredAt">
-                <column nullable="false"/>
+                <column name="registered_at" nullable="false"/>
             </basic>
-
-            <basic name="activatedAt"/>
-            <basic name="deactivatedAt"/>
+            <basic name="activatedAt">
+                <column name="activated_at"/>
+            </basic>
+            <basic name="deactivatedAt">
+                <column name="deactivated_at"/>
+            </basic>
+            <embedded name="profile">
+                <attribute-override name="address">
+                    <column name="profile_address" length="20"/>
+                </attribute-override>
+            </embedded>
         </attributes>
     </entity>
 
